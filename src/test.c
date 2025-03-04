@@ -6,21 +6,20 @@
 
 
 int main(int argc , char ** argv){
+
    strArr_t myData = createArrayOfStr();
    pushStrArr(&myData,"hello");
    pushStrArr(&myData,"world");
    pushStrArr(&myData,"omar");
-   pushStrArr(&myData,"king");
-   printStrArr(&myData);
 
-   char * res = getEleStrArr(&myData,-2);
-   if (res) {
-       puts(res);
-   }else{
+   // printStrArr(&myData);
+   char * pStr = getEleStrArr(&myData ,44);
+   if (pStr) {
+       puts(pStr);
+   }else {
        puts("invalid index");
    }
 
    freeStrArr(&myData);
-
    return  0;
 }

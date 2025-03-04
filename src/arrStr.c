@@ -5,22 +5,33 @@
 
 
 /*
+======on header: "arrayOfStr.h"======
 typedef unsigned int UNINT ;
 typedef  struct strArr_t{
     unsigned int size;
     char ** elements;
 } strArr_t ;
+======================================
 */
-
 
 
 strArr_t  createArrayOfStr(){
     strArr_t myStrArr = {
-        .size = 0,
+        .size = 0,//size of memory that allocated for echo string pointer
+                  // if it 4 then it can hold 4 elements
+        .len = 0,//length of the array
     };
+    void * newP =  malloc(sizeof(char *) * 4);
+    if (!newP) {
+        return myStrArr;
+    }
+    myStrArr.size += 4;
+    myStrArr.elements =  newP;
 
     return myStrArr;
 }
+
+
 
 /*
 return 1 : if succed
@@ -28,51 +39,51 @@ return -1 : if no memory left
 return 0 : if somsing gose wrong
 */
 
-// int  pushStrArr(strArr_t * myStrArr , char * string){
-//     if (myStrArr->len == 0) {
-//         myStrArr->elements = malloc(sizeof(char*));
-//         if (!myStrArr->elements) {
-//             return -1;
-//         }
-//     }else if (myStrArr->len > 0) {
-//         void * newAddress = realloc(myStrArr->elements,sizeof(char*) * (myStrArr->len + 1)) ;
-//         if (newAddress) {
-//             myStrArr->elements = newAddress;
-//         }else {
-//             return -1;
-//         }
-//     }
-//     size_t stringLen = strlen(string) + 1;
-//     myStrArr->elements[ myStrArr->len] = malloc(stringLen);
+int  pushStrArr(strArr_t * myStrArr ,const char * string)
+{
 
-//     if (!myStrArr->elements[ myStrArr->len] ) {
-//         return -1;
-//     }
-//     strncpy(myStrArr->elements[ myStrArr->len],string,stringLen);
-//     myStrArr->len++;
-//     return 1;
-// }
+    if (myStrArr -> len >=  myStrArr -> size) {
+        UNINT newSize =  myStrArr -> size + 4;
+        void * newP = realloc(myStrArr->elements , sizeof(char *) * newSize);
 
-// int  pushStrArr(strArr_t * myStrArr , char * string){
-//     /*
+        if (!newP) {
+            return -1;
+        }
 
-//     */
+        myStrArr->elements = newP;
+        myStrArr->size = newSize;
+    }
 
-// }
+    const size_t StringSize = strlen(string) + 1;
+    char * newP = (char *) malloc(sizeof(char) * StringSize);
+    if (!newP) {
+        return  -1;
+    }
+    strncpy(newP, string, StringSize);
+    myStrArr->elements[myStrArr -> len] = newP;
+    myStrArr -> len += 1;
+    return 1;
+
+}
+
 
 int freeStrArr(strArr_t * myStrArr)
 {
-    for (unsigned int index = 0; index < myStrArr->len; index++) {
+    for (UNINT index = 0; index < myStrArr->len; index++) {
         free(myStrArr->elements[index]);
+        myStrArr->elements[index] = NULL;
     }
     free(myStrArr->elements);
+    myStrArr->elements = NULL;
+    myStrArr->len = 0;
+    myStrArr->size = 0;
     return 1;
 }
 
 
 void printStrArr(strArr_t * myStrArr)
 {
-    for (unsigned int index = 0; index < myStrArr->len; index++) {
+    for (UNINT index = 0; index < myStrArr->len; index++) {
         puts(myStrArr->elements[index]);
     }
 
@@ -90,20 +101,14 @@ the index prameter
 */
 char *  getEleStrArr(strArr_t * myStrArr , int index)
 {
-    unsigned int strArrLen = myStrArr -> len;
-
+    UNINT strArrLen = (myStrArr -> len);
     if (index < 0) {
-        int reverseIndex = strArrLen + index;
-        if ( reverseIndex < 0 ) {
-
-            return NULL;
-        }
-        return myStrArr->elements[reverseIndex];
-    }else {
-        if (strArrLen <= index) {
-
-                return NULL;
-        }
-        return myStrArr->elements[index];
+        index = strArrLen + index;
     }
+
+    if (index >= strArrLen || index < 0) {
+        return NULL;
+    }
+
+    return myStrArr->elements[index];
 }
