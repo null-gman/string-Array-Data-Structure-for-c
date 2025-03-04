@@ -12,14 +12,14 @@ int main(int argc , char ** argv){
    pushStrArr(&myData,"world");
    pushStrArr(&myData,"omar");
 
-   // printStrArr(&myData);
-   char * pStr = getEleStrArr(&myData ,44);
-   if (pStr) {
-       puts(pStr);
-   }else {
-       puts("invalid index");
-   }
+   printStrArr(&myData);
+   puts("================");
+   removeIndexStrArr(&myData, -4);
 
+   printStrArr(&myData);
+   puts("================");
+   pushStrArr(&myData,"c");
+   printStrArr(&myData);
    freeStrArr(&myData);
    return  0;
 }

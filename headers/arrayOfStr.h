@@ -19,4 +19,5 @@ int  pushStrArr(strArr_t * myStrArr ,const char * string);
 int freeStrArr(strArr_t * myStrArr);
 void printStrArr(strArr_t * myStrArr);
 
+int removeIndexStrArr(strArr_t * myStrArr,int index);
 char *  getEleStrArr(strArr_t * myStrArr , int index);

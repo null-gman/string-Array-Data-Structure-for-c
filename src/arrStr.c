@@ -90,6 +90,49 @@ void printStrArr(strArr_t * myStrArr)
 
 }
 
+/*
+    check if indx is valid and if it negative will return from last index ,
+    e.g: -1 mean last index(element) .
+    return -1 if invalid index;
+*/
+static int getFixedIndex(strArr_t * myStrArr,int index)
+{
+    UNINT strArrLen = (myStrArr -> len);
+    if (index < 0) {
+        index = strArrLen + index;
+    }
+    if (index >= strArrLen || index < 0) {
+        return -1;
+    }
+
+    return index;
+}
+
+
+/*
+    #return
+        -1 : if falid
+        0 : invalid index
+        1 : if succed
+    #job
+        remove element from array and reset the index
+*/
+
+int removeIndexStrArr(strArr_t * myStrArr,int index)
+{
+    index = getFixedIndex(myStrArr,index);
+    if (index == -1) {
+        return 0;
+    }
+
+    free(myStrArr->elements[index]);
+    for (size_t i=index; i < myStrArr->len - 1 ; i++) {
+        myStrArr->elements[i] = myStrArr->elements[i + 1] ;
+    }
+    myStrArr->elements[ myStrArr->len -1 ] = NULL;
+    myStrArr->len--;
+    return 1;
+}
 
 /*
 return NULL : if invalid index
@@ -102,14 +145,9 @@ the index prameter
 */
 char *  getEleStrArr(strArr_t * myStrArr , int index)
 {
-    UNINT strArrLen = (myStrArr -> len);
-    if (index < 0) {
-        index = strArrLen + index;
-    }
-
-    if (index >= strArrLen || index < 0) {
+    index = getFixedIndex(myStrArr,index);
+    if (index == -1) {
         return NULL;
     }
-
     return myStrArr->elements[index];
 }
