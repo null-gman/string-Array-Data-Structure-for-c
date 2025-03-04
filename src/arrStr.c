@@ -8,7 +8,8 @@
 ======on header: "arrayOfStr.h"======
 typedef unsigned int UNINT ;
 typedef  struct strArr_t{
-    unsigned int size;
+    UNINT size;
+    UNINT len;
     char ** elements;
 } strArr_t ;
 ======================================
