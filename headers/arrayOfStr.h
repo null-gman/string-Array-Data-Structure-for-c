@@ -1,6 +1,7 @@
+typedef unsigned int UNINT ;
 
 typedef  struct strArr_t{
-    unsigned int len;
+    UNINT size;
     char ** elements;
 } strArr_t ;
 
