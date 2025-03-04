@@ -1,4 +1,4 @@
 
 
 CompileFlags:
-  Add: [-I./home/gman/work/sproj/c/arrayOfString/headers/]
+  Add: [-I/home/gman/work/sproj/c/arrayOfString/headers/]

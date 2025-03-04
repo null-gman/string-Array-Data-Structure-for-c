@@ -1,4 +1,4 @@
-bin = test
+bin = bin/test
 headers = -I./headers/
 cflages = -Wall $(headers)
 
@@ -19,14 +19,14 @@ objs/str.o : myLibs/str.c
 	gcc -c $(cflages) -o $@ $<
 
 clean :
-	rm test
-	rm ./objs/*
+	rm bin/*
+	rm objs/*
 
 
 
 play :
-	@./test
+	@bin/test
 
 playTest :
 	@echo "run the program with valgrind :\n"
-	valgrind ./test
+	valgrind bin/test
