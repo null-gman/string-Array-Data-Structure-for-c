@@ -21,3 +21,4 @@ void printStrArr(strArr_t * myStrArr);
 
 int removeIndexStrArr(strArr_t * myStrArr,int index);
 char *  getEleStrArr(strArr_t * myStrArr , int index);
+int replaceEleStrArr(strArr_t * myStrArr ,int index ,const char * newString);

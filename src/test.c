@@ -14,12 +14,18 @@ int main(int argc , char ** argv){
 
    printStrArr(&myData);
    puts("================");
-   removeIndexStrArr(&myData, -4);
+   removeIndexStrArr(&myData, -1);
 
    printStrArr(&myData);
    puts("================");
    pushStrArr(&myData,"c");
    printStrArr(&myData);
+   puts("================");
+
+
+   printf("%d\n",replaceEleStrArr(&myData,-1,"java"));
+   printStrArr(&myData);
+    puts("================");
    freeStrArr(&myData);
    return  0;
 }

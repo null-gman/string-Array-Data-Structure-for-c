@@ -1,3 +1,4 @@
+#include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -150,4 +151,29 @@ char *  getEleStrArr(strArr_t * myStrArr , int index)
         return NULL;
     }
     return myStrArr->elements[index];
+}
+
+
+/*
+    #return
+        -1 : if falid
+        1 : if succed
+*/
+int replaceEleStrArr(strArr_t * myStrArr ,int index ,const char * newString)
+{
+    size_t newStringSize = strlen(newString) + 1;
+
+    index = getFixedIndex(myStrArr,index);
+    if (index == -1) {
+        return -1;
+    }
+
+    char * pNew = (char *) malloc(sizeof(char) * newStringSize);
+    if (!pNew) {
+        return -1;
+    }
+    strncpy(pNew, newString,newStringSize);
+    free(myStrArr->elements[index]);
+    myStrArr->elements[index] = pNew;
+    return 1;
 }
