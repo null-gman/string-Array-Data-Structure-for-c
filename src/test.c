@@ -10,7 +10,7 @@ int main(int argc , char ** argv){
    strArr_t myData = createArrayOfStr();
    pushStrArr(&myData,"hello");
    pushStrArr(&myData,"world");
-   pushStrArr(&myData,"omar");
+
 
    printStrArr(&myData);
    puts("================");
