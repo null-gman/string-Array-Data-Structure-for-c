@@ -71,7 +71,7 @@ strArr_t yourArray = createArrayOfStr();
 
 > DO NOT EVER ASING THESE MEMBERS WITH YOUR VALUS LEAVE THE function DO IT FOR YOU !!!
 
-## int freeStrArr(strArr_t * myStrArr);
+## `int freeStrArr(strArr_t * myStrArr);`
 
 - **Must be used after `strArr_t createArrayOfStr();` to free/de-allocate the heap memory.**
 
@@ -80,9 +80,9 @@ strArr_t yourArray = createArrayOfStr();
 
 	> There are no other conditions, by the way. :)
 
->After calling `int freeStrArr(strArr_t *myStrArr);` to free the array, you must use `strArr_t createArrayOfStr();` again to reuse the array. Do not use any other data structure functions; otherwise, memory errors may occur, potentially causing the program to crash.
+> After calling `int freeStrArr(strArr_t *myStrArr);` to free the array, you must use `strArr_t createArrayOfStr();` again to reuse the array. Do not use any other data structure functions; otherwise, memory errors may occur, potentially causing the program to crash.
 
-## int pushStrArr(strArr_t * myStrArr , const char * string );
+## `int pushStrArr(strArr_t * myStrArr , const char * string );`
 
 - Add or push a string to the array, appending it after the last element.
 -   **Function parameters** :
@@ -93,7 +93,7 @@ strArr_t yourArray = createArrayOfStr();
     -   **-1** : If memory allocation or `realloc` fails
     -   **0**   : Unknown error
     
-## int removeIndexStrArr(strArr_t * myStrArr,int index);
+## `int removeIndexStrArr(strArr_t * myStrArr,int index);`
 
 - remove(free) a string from index and move the elements after it to shit-left by one .
 - the function parameters :
@@ -108,7 +108,7 @@ strArr_t yourArray = createArrayOfStr();
 		  -   **-1** :   **invalid index**
     
     
-### replaceEleStrArr(strArr_t * myStrArr,int index ,  const char * string);
+## `replaceEleStrArr(strArr_t * myStrArr,int index ,  const char * string);`
 
 - free and replace element (char *) by index  with a new one
 - **Function pentameters** :
@@ -139,7 +139,7 @@ strArr_t yourArray = createArrayOfStr();
   - **(`char * `) to string : if successful**
   - **`NULL` : invalid index**
 
-## void printStrArr(strArr_t * myStrArr);
+## `void printStrArr(strArr_t * myStrArr);`
 
 - `printf` all elements(`char **`) strings on the terminal
 - the function parameters :
