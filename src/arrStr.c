@@ -19,14 +19,16 @@ typedef  struct strArr_t{
 
 strArr_t  createArrayOfStr(){
     strArr_t myStrArr = {
-        .size = 0,//size of memory that allocated for echo string pointer
-                  // if it 4 then it can hold 4 elements
-        .len = 0,//length of the array
+        .size = 0,
+        .len = 0,
+        .elements = NULL;
     };
+
     void * newP =  malloc(sizeof(char *) * 4);
     if (!newP) {
         return myStrArr;
     }
+
     myStrArr.size += 4;
     myStrArr.elements =  newP;
 
@@ -113,7 +115,7 @@ static int getFixedIndex(strArr_t * myStrArr,int index)
 /*
     #return
         -1 : if falid
-        0 : invalid index
+        -1 : invalid index
         1 : if succed
     #job
         remove element from array and reset the index
@@ -123,7 +125,7 @@ int removeIndexStrArr(strArr_t * myStrArr,int index)
 {
     index = getFixedIndex(myStrArr,index);
     if (index == -1) {
-        return 0;
+        return -1;
     }
 
     free(myStrArr->elements[index]);
