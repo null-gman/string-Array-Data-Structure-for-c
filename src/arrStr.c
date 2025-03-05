@@ -21,7 +21,7 @@ strArr_t  createArrayOfStr(){
     strArr_t myStrArr = {
         .size = 0,
         .len = 0,
-        .elements = NULL;
+        .elements = NULL,
     };
 
     void * newP =  malloc(sizeof(char *) * 4);
