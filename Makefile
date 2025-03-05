@@ -11,11 +11,11 @@ objs/test.o : src/test.c
 objs/arrStr.o : src/arrStr.c
 	gcc -c $(cflages) -o $@ $<
 
-objs/input.o : myLibs/input.c
+objs/input.o :	src/myLibs/input.c
 	gcc -c $(cflages) -o $@ $<
 
 
-objs/str.o : myLibs/str.c
+objs/str.o : src/myLibs/str.c
 	gcc -c $(cflages) -o $@ $<
 
 clean :
