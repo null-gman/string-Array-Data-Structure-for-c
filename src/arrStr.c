@@ -10,7 +10,7 @@
 typedef unsigned int UNINT ;
 typedef  struct strArr_t{
     UNINT size;
-    UNINT len;
+    UNINT len; //lenght of the array
     char ** elements;
 } strArr_t ;
 ======================================
@@ -49,11 +49,9 @@ int  pushStrArr(strArr_t * myStrArr ,const char * string)
     if (myStrArr -> len >=  myStrArr -> size) {
         UNINT newSize =  myStrArr -> size + 4;
         void * newP = realloc(myStrArr->elements , sizeof(char *) * newSize);
-
         if (!newP) {
             return -1;
         }
-
         myStrArr->elements = newP;
         myStrArr->size = newSize;
     }
