@@ -100,7 +100,7 @@ void printStrArr(strArr_t * myStrArr)
 */
 static int getFixedIndex(strArr_t * myStrArr,int index)
 {
-    UNINT strArrLen = (myStrArr -> len);
+    int strArrLen = (myStrArr -> len);
     if (index < 0) {
         index = strArrLen + index;
     }
