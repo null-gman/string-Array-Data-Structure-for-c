@@ -31,7 +31,7 @@ I used the second approach with heap memory to create that data structure.
   } strArr_t ;
   ```
 
-> Sorry for my bad explanation! I presume you are a C developer and better than me. :)
+> Sorry for my bad explanation! I presume you are a C developer . :)
 
 # usage
 
@@ -51,9 +51,9 @@ strArr_t yourArray = createArrayOfStr();
   .elements = NULL;
   };
   ```
-  
+
 - And it will try to allocate space for 4 `char*`. If it succeeds, the struct will contain `.size = 4`; if it fails, the `.size` member will be `.size = 0`.
-  
+
 ```
   strArr_t yourArray = {
         .size = 4,
@@ -92,7 +92,7 @@ strArr_t yourArray = createArrayOfStr();
     -   **1**  : If successful
     -   **-1** : If memory allocation or `realloc` fails
     -   **0**   : Unknown error
-    
+
 ## `int removeIndexStrArr(strArr_t * myStrArr,int index);`
 
 - remove(free) a string from index and move the elements after it to shit-left by one .
@@ -106,8 +106,8 @@ strArr_t yourArray = createArrayOfStr();
    -   **Function return**:
 		  -   **1**  : If successful
 		  -   **-1** :   **invalid index**
-    
-    
+
+
 ## `replaceEleStrArr(strArr_t * myStrArr,int index ,  const char * string);`
 
 - free and replace element (char *) by index  with a new one
@@ -117,12 +117,12 @@ strArr_t yourArray = createArrayOfStr();
   - **int  number refer to index of the element**
 
 	>  Negative indices are allowed: `-1` refers to the last element, `-2` refers to the second-to-last element, and so on.
-    
+
   - **pointer to a string or string literal**.
    -   **Function return**:
 		  -   **1**  : If successful
 		  -   **-1** :   **invalid index**
-		
+
 ## `char * getEleStrArr(strArr_t * myStrArr,int index);`
 
 - return a pointer to the element (`char**`) that on the index
@@ -133,8 +133,8 @@ strArr_t yourArray = createArrayOfStr();
   - **pointer to  `strArr_t`**
   - **int  number refer to index of the element**
 	>  Negative indices are allowed: `-1` refers to the last element, `-2` refers to the second-to-last element, and so on.
-    
-   
+
+
 - **Function return **:
   - **(`char * `) to string : if successful**
   - **`NULL` : invalid index**
@@ -188,28 +188,24 @@ Here's an improved and corrected version of your instructions:
 
 1.  Ensure you have **make** installed.
 2.  To compile `src/test.c`, run:
-    
+
     ```
     make
     ```
-    
+
 3.  To run the `bin/test` executable, run:
-    
+
     ```
     make play
     ```
-    
+
 4.  To run the `bin/test` with **Valgrind**, run :
     ```
     make playTest
     ```
-    
+
 5.  To clear/remove/delete all object files and binaries, run:
-    
+
     ```
     make clean
     ```
-    
-
-
-
