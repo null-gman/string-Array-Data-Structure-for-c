@@ -1,6 +1,6 @@
 bin = bin/test
 headers = -I./headers/
-cflages = -Wall $(headers)
+cflages = -Wall -Wextra $(headers)
 
 $(bin) : objs/test.o objs/arrStr.o objs/input.o objs/str.o
 	gcc -o $@ $^
