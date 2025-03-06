@@ -1,3 +1,5 @@
+bin/*
+objs/*
 .clangd
 .tldr
 README.md.html
