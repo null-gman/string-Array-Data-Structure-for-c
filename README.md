@@ -166,27 +166,6 @@ arrayOfStrings/
 ```
 # Building/Compiling
 
-1. Ensure you have make installed .
-2. to compile src/test.c run :
-```
-make
-```
-3. To run the bin/test (the exeutbale) , run :
-```
-make play
-```
-4. to run the bin/test with **Valgrind** , run :
-```
-make playTest
-```
-5. to clear/remove/delete all object files and binarys , run :
-```
-make clean
-```
-
-
-Here's an improved and corrected version of your instructions:
-
 1.  Ensure you have **make** installed.
 2.  To compile `src/test.c`, run:
 
