@@ -7,6 +7,7 @@ There is no built-in array of string data structure in C. Instead, we usually us
 I used the second approach with heap memory to create that data structure.
 
 ## **A high-level algorithm overview**
+![image](https://github.com/user-attachments/assets/742aa96a-0d5b-4d81-80b1-a1cf2591aa6b)
 
 
 ## Explanation
