@@ -18,7 +18,7 @@ clean :
 	rm objs/*.o
 
 
-folders :
+folder:
 	mkdir ./objs/ ./bin/
 
 play :
