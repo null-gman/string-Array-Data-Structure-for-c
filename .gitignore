@@ -1,5 +1,5 @@
-bin/*.exe
-objs/*.o
+bin/
+objs/
 .clangd
 .tldr
 README.md.html

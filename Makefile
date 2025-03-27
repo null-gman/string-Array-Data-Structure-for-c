@@ -18,6 +18,8 @@ clean :
 	rm objs/*.o
 
 
+folders :
+	mkdir ./objs/ ./bin/
 
 play :
 	@bin/test.exe
