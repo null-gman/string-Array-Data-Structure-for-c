@@ -37,13 +37,26 @@ strArr_t  createArrayOfStr(){
 
 
 
+static int getFixedIndex(strArr_t * myStrArr,int index)
+{
+    int strArrLen = (myStrArr -> len);
+    if (index < 0) {
+        index = strArrLen + index;
+    }
+    if (index >= strArrLen || index < 0) {
+        return -1;
+    }
+
+    return index;
+}
+
 /*
 return 1 : if succed
 return -1 : if no memory left
 return 0 : if somsing gose wrong
 */
 
-int  pushStrArr(strArr_t * myStrArr ,const char * string)
+int pushStrArr(strArr_t * myStrArr ,const char * string)
 {
 
     if (myStrArr -> len >=  myStrArr -> size) {
@@ -96,18 +109,7 @@ void printStrArr(strArr_t * myStrArr)
     e.g: -1 mean last index(element) .
     return -1 if invalid index;
 */
-static int getFixedIndex(strArr_t * myStrArr,int index)
-{
-    int strArrLen = (myStrArr -> len);
-    if (index < 0) {
-        index = strArrLen + index;
-    }
-    if (index >= strArrLen || index < 0) {
-        return -1;
-    }
 
-    return index;
-}
 
 
 /*
@@ -176,4 +178,28 @@ int replaceEleStrArr(strArr_t * myStrArr ,int index ,const char * newString)
     free(myStrArr->elements[index]);
     myStrArr->elements[index] = pNew;
     return 1;
+}
+
+
+
+int reverseEleStrArr(strArr_t * myStrArr ,int index)
+{
+
+    const int indexValue = getFixedIndex(myStrArr,index);
+    if (indexValue == -1) {
+        return -1;
+    }
+    size_t elementLen = strlen(myStrArr->elements[indexValue]);
+
+    size_t firstPointer = 0;
+    size_t lastPointer = elementLen - 1;
+    char tempChar = '\0';
+    while (firstPointer < lastPointer) {
+        tempChar = myStrArr->elements[indexValue][firstPointer];
+        myStrArr->elements[indexValue][firstPointer] = myStrArr->elements[indexValue][lastPointer];
+        myStrArr->elements[indexValue][lastPointer] = tempChar;
+        firstPointer++;lastPointer--;
+    }
+
+    return 0;
 }

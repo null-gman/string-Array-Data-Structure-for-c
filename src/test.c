@@ -65,6 +65,10 @@ int main(void){
    }
    printf("\n") ;
    puts("================");
+   puts("fun : reverse the frist element");
+   reverseEleStrArr(&myData,0);
+   printStrArr(&myData);
+   puts("================");
    puts("fun : printf the array after free it");
    freeStrArr(&myData);
    printStrArr(&myData); //will print nothing
