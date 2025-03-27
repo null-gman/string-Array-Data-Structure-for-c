@@ -133,7 +133,7 @@ strArr_t yourArray = createArrayOfStr();
 - Function parameters :
   - **pointer to  `strArr_t`**
   - **int  number refer to index of the element**
-	>  Negative indices are allowed: `-1` refers to the last element, `-2` refers to the second-to-last element, and so on.
+	>  Negative indexs are allowed: `-1` refers to the last element, `-2` refers to the second-to-last element, and so on.
 
 
 - **Function return **:
@@ -143,11 +143,21 @@ strArr_t yourArray = createArrayOfStr();
 ## `void printStrArr(strArr_t * myStrArr);`
 
 - `printf` all elements(`char **`) strings on the terminal
-- the function parameters :
+- Function parameters :
 
   - **pointer to  `strArr_t`**
 - Function return : **null**
 
+## `int reverseEleStrArr(strArr_t * myStrArr ,int index);`
+
+- reverse element by index
+- Function parameters :
+  - strArr_t * myStrArr : pointer to your string data structure
+  - index of the element you want to reverse.
+  	>  Negative indexs are allowed: `-1` refers to the last element, `-2` refers to the second-to-last element, and so on.
+- Function return :
+  - `-1` if the index is not valid
+  -  `0` succed
 # Project Structure
 ```
 arrayOfStrings/
