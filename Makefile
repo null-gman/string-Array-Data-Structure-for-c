@@ -1,5 +1,4 @@
 testing = bin/test.exe
-# for all platform not windows only .
 headers = -I./headers/
 cflages = -Wall -Wextra $(headers)
 
@@ -14,10 +13,11 @@ objs/arrStr.o : src/arrStr.c
 	gcc -c $(cflages) -o $@ $<
 
 
+
+
 clean :
 	rm bin/*.exe
 	rm objs/*.o
-
 
 folder:
 	mkdir ./objs/ ./bin/
