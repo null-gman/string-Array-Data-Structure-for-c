@@ -167,24 +167,25 @@ arrayOfStrings/
 # Building/Compiling
 
 1.  Ensure you have **make** installed.
-2.  To compile `src/test.c`, run:
+2. run `make folder` to create '/objs/' and '/bin'/ folders
+3. To compile `src/test.c`, run:
 
     ```
     make
     ```
 
-3.  To run the `bin/test` executable, run:
+4.  To run the `bin/test` executable, run:
 
     ```
     make play
     ```
 
-4.  To run the `bin/test` with **Valgrind**, run :
+5.  To run the `bin/test` with **Valgrind**, run :
     ```
     make playTest
     ```
 
-5.  To clear/remove/delete all object files and binaries, run:
+6.  To clear/remove/delete all object files and binaries, run:
 
     ```
     make clean
