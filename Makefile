@@ -1,9 +1,10 @@
-bin = bin/test.exe
+testing = bin/test.exe
 # for all platform not windows only .
 headers = -I./headers/
 cflages = -Wall -Wextra $(headers)
 
-$(bin) : objs/test.o objs/arrStr.o
+
+$(testing) : objs/test.o objs/arrStr.o
 	gcc -o $@ $^
 
 objs/test.o : src/test.c
