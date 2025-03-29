@@ -34,7 +34,7 @@ I used the second approach with heap memory to create that data structure.
 
 > Sorry for my bad explanation! I presume you are a C developer . :)
 
-# usage
+# refrence
 
 ## `strArr_t createArrayOfStr();`
 
